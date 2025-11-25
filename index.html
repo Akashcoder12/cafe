@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bean & Brew — Cafe</title>
+  <meta name="description" content="Bean & Brew Cafe — Fresh coffee, cozy vibes, online orders via WhatsApp." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small helpers */
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/80 glass shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=80&auto=format&fit=crop&crop=faces" alt="logo" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h1 class="font-bold text-lg">Bean & Brew</h1>
+          <p class="text-xs text-gray-600">Coffee • Pastries • Good Vibes</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#menu" class="hover:text-amber-600">Menu</a>
+        <a href="#offers" class="hover:text-amber-600">Offers</a>
+        <a href="#gallery" class="hover:text-amber-600">Gallery</a>
+        <a href="#contact" class="hover:text-amber-600">Contact</a>
+        <a href="#" id="orderBtn" class="px-4 py-2 bg-amber-500 text-white rounded-md">Order on WhatsApp</a>
+      </nav>
+
+      <div class="md:hidden">
+        <button id="menuToggle" class="p-2 rounded-md bg-gray-100">Menu</button>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobileNav" class="hidden md:hidden border-t">
+      <div class="flex flex-col p-4 gap-3">
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#" id="orderBtnMobile" class="px-4 py-2 bg-amber-500 text-white rounded-md inline-block w-max">Order on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="pt-8">
+    <section class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-4">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Welcome to <span class="text-amber-600">Bean & Brew</span></h2>
+        <p class="mt-4 text-gray-600">Cozy space for great coffee, fresh pastries, and work-friendly corners. Order ahead on WhatsApp or drop in anytime.</p>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#menu" class="px-4 py-2 border rounded-md">See Menu</a>
+          <a href="#contact" class="px-4 py-2 bg-amber-500 text-white rounded-md">Contact / WhatsApp</a>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+          <div class="p-3 bg-white rounded-md shadow-sm">
+            <p class="text-xs text-gray-500">Opening Hours</p>
+            <p class="font-semibold">Mon–Sun: 8:00 AM — 10:00 PM</p>
+          </div>
+          <div class="p-3 bg-white rounded-md shadow-sm">
+            <p class="text-xs text-gray-500">Phone</p>
+            <p class="font-semibold">+91 98765 43210</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-lg">
+        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=1200&auto=format&fit=crop" alt="Cafe interior" class="w-full h-80 object-cover" />
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="max-w-6xl mx-auto mt-12 px-4">
+      <h3 class="text-2xl font-bold">Menu</h3>
+      <p class="text-gray-600 mt-1">Popular picks — prices shown are for regular size.</p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <!-- Item -->
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <div class="flex items-start gap-4">
+            <img class="w-20 h-20 rounded-md object-cover" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=400&auto=format&fit=crop" alt="espresso" />
+            <div>
+              <h4 class="font-semibold">Espresso</h4>
+              <p class="text-sm text-gray-500">Rich & intense</p>
+              <p class="mt-2 font-bold">₹80</p>
+            </div>
+          </div>
+          <button class="mt-4 w-full px-3 py-2 bg-amber-500 text-white rounded-md order-now" data-item="Espresso — ₹80">Order on WhatsApp</button>
+        </div>
+
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <div class="flex items-start gap-4">
+            <img class="w-20 h-20 rounded-md object-cover" src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=400&auto=format&fit=crop" alt="latte" />
+            <div>
+              <h4 class="font-semibold">Caffe Latte</h4>
+              <p class="text-sm text-gray-500">Smooth & milky</p>
+              <p class="mt-2 font-bold">₹120</p>
+            </div>
+          </div>
+          <button class="mt-4 w-full px-3 py-2 bg-amber-500 text-white rounded-md order-now" data-item="Caffe Latte — ₹120">Order on WhatsApp</button>
+        </div>
+
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <div class="flex items-start gap-4">
+            <img class="w-20 h-20 rounded-md object-cover" src="https://images.unsplash.com/photo-1542444459-db2d4d7b6f3b?q=80&w=400&auto=format&fit=crop" alt="cheesecake" />
+            <div>
+              <h4 class="font-semibold">Blueberry Cheesecake</h4>
+              <p class="text-sm text-gray-500">House special</p>
+              <p class="mt-2 font-bold">₹220</p>
+            </div>
+          </div>
+          <button class="mt-4 w-full px-3 py-2 bg-amber-500 text-white rounded-md order-now" data-item="Blueberry Cheesecake — ₹220">Order on WhatsApp</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section id="offers" class="max-w-6xl mx-auto mt-12 px-4">
+      <h3 class="text-2xl font-bold">Offers</h3>
+      <div class="mt-4 grid md:grid-cols-2 gap-4">
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Morning Combo</h4>
+          <p class="text-gray-600">Any coffee + pastry at ₹160 (8:00 AM — 11:00 AM)</p>
+          <button class="mt-4 px-3 py-2 bg-amber-500 text-white rounded-md order-now" data-item="Morning Combo — ₹160">Order Now</button>
+        </div>
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Weekday Happy Hour</h4>
+          <p class="text-gray-600">Buy 1 Get 1 on select cold drinks (3:00 PM — 5:00 PM)</p>
+          <button class="mt-4 px-3 py-2 bg-amber-500 text-white rounded-md order-now" data-item="Happy Hour — B1G1">Order Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="max-w-6xl mx-auto mt-12 px-4">
+      <h3 class="text-2xl font-bold">Gallery</h3>
+      <p class="text-gray-600 mt-1">A few snaps from the cafe.</p>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img class="rounded-lg object-cover h-40 w-full" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=800&auto=format&fit=crop" alt="pic1"/>
+        <img class="rounded-lg object-cover h-40 w-full" src="https://images.unsplash.com/photo-1521305916504-4a1121188589?q=80&w=800&auto=format&fit=crop" alt="pic2"/>
+        <img class="rounded-lg object-cover h-40 w-full" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop" alt="pic3"/>
+        <img class="rounded-lg object-cover h-40 w-full" src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?q=80&w=800&auto=format&fit=crop" alt="pic4"/>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-6xl mx-auto mt-12 px-4 mb-24">
+      <h3 class="text-2xl font-bold">Contact</h3>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Visit Us</h4>
+          <p class="text-gray-600">123 Coffee Lane, Downtown, YourCity</p>
+          <p class="mt-2"><span class="font-semibold">Hours:</span> Mon–Sun: 8:00 AM — 10:00 PM</p>
+          <p class="mt-2"><span class="font-semibold">Phone:</span> +91 98765 43210</p>
+
+          <div class="mt-4 flex gap-3">
+            <a href="https://wa.me/919876543210?text=Hi%20Bean%20%26%20Brew%2C%20I%20want%20to%20order%20%F0%9F%8D%BA" target="_blank" rel="noopener noreferrer" class="px-3 py-2 bg-green-500 text-white rounded-md">Chat on WhatsApp</a>
+            <a href="#" class="px-3 py-2 bg-blue-600 text-white rounded-md">Facebook</a>
+            <a href="#" class="px-3 py-2 bg-pink-500 text-white rounded-md">Instagram</a>
+          </div>
+
+          <div class="mt-6">
+            <h5 class="font-semibold">Quick Contact Form</h5>
+            <form id="contactForm" class="mt-2 space-y-2">
+              <input required name="name" class="w-full border rounded-md p-2" placeholder="Your name" />
+              <input required name="phone" class="w-full border rounded-md p-2" placeholder="Phone or WhatsApp number" />
+              <textarea name="message" class="w-full border rounded-md p-2" rows="3" placeholder="Message (orders / queries)"></textarea>
+              <div class="flex gap-2">
+                <button type="submit" class="px-4 py-2 bg-amber-500 text-white rounded-md">Send via WhatsApp</button>
+                <button type="button" id="clearForm" class="px-4 py-2 border rounded-md">Clear</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="p-4 bg-white rounded-lg shadow-sm">
+          <h4 class="font-semibold">Map</h4>
+          <p class="text-gray-600 mt-1">Find us on the map for directions.</p>
+          <div class="mt-4 rounded overflow-hidden shadow-sm">
+            <iframe class="w-full h-72" frameborder="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019136042447!2d144.96305831531566!3d-37.81362797975133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f3ad7f3b%3A0x5045675218ce240!2sMelbourne!5e0!3m2!1sen!2sin!4v1620159533576!5m2!1sen!2sin"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer with socials -->
+      <footer class="mt-8 p-4 bg-white rounded-lg text-sm shadow-sm">
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-3">
+          <div class="text-gray-600">© <span id="year"></span> Bean & Brew</div>
+          <div class="flex gap-3">
+            <a href="#" class="px-3 py-2 border rounded-md">Instagram</a>
+            <a href="#" class="px-3 py-2 border rounded-md">Facebook</a>
+            <a href="#" class="px-3 py-2 border rounded-md">Twitter</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <a id="whatsFloat" href="https://wa.me/919876543210?text=Hi%20Bean%20%26%20Brew%2C%20I%27d%20like%20to%20order" target="_blank" class="fixed right-6 bottom-6 shadow-lg p-3 rounded-full bg-green-500 text-white"> 
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8-1.47 0-2.85-.3-4.06-.85L3 20l1.85-4.06C3.3 13.85 3 12.47 3 11c0-4.97 4.03-9 9-9s9 4.03 9 9z" />
+    </svg>
+  </a>
+
+  <script>
+    // replaceable phone constant (change to your full phone number with country code, e.g. 919876543210)
+    const PHONE = '919876543210';
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    menuToggle?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // order buttons
+    function openWhatsAppWith(text) {
+      const encoded = encodeURIComponent(text);
+      const url = `https://wa.me/${PHONE}?text=${encoded}`;
+      window.open(url, '_blank');
+    }
+
+    document.querySelectorAll('.order-now').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const item = e.currentTarget.dataset.item || 'Order from Bean & Brew';
+        openWhatsAppWith(`Hi, I'd like to order: ${item}`);
+      });
+    });
+
+    // header order buttons
+    document.getElementById('orderBtn')?.addEventListener('click', () => openWhatsAppWith('Hi, I want to place an order'));
+    document.getElementById('orderBtnMobile')?.addEventListener('click', () => openWhatsAppWith('Hi, I want to place an order'));
+
+    // contact form: open whatsapp with filled message
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = e.currentTarget;
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
+      const message = form.message.value.trim();
+      if(!name || !phone) {
+        alert('Please enter name and phone');
+        return;
+      }
+      const text = `Hello, my name is ${name} (${phone}). ${message}`;
+      openWhatsAppWith(text);
+    });
+
+    document.getElementById('clearForm').addEventListener('click', () => {
+      document.getElementById('contactForm').reset();
+    });
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = a.getAttribute('href');
+        if(target === '#') return;
+        if(target.startsWith('#')) {
+          e.preventDefault();
+          const el = document.querySelector(target);
+          el?.scrollIntoView({behavior:'smooth', block: 'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
